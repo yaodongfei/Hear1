@@ -10,7 +10,6 @@ import UIKit
 import Speech
 import AVFoundation
 
-
 class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "zh_CN"))
@@ -18,9 +17,6 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     private var recognitionTask: SFSpeechRecognitionTask?
     private let audioEngine = AVAudioEngine()
     private let speechSynthesizer = AVSpeechSynthesizer()
-    
-    private var chatGPTStreamClient: ChatGPTStreamClient?
-
     
     
     private var silenceTimer: Timer?
@@ -102,12 +98,10 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
                     if !result.bestTranscription.formattedString.isEmpty && !result.bestTranscription.formattedString.contains("太阳") {
                         print(result.bestTranscription.formattedString+"=====开始调接口")
                         self?.appendMessageToTextView(result.bestTranscription.formattedString, sender: "I")
-//                        self?.getChatGPTResponse(for: result.bestTranscription.formattedString) { response in
-//                            self?.speak(response)
-//                        }
-                        
-                        self?.chatGPTStreamClient?.createStreamTask(for: result.bestTranscription.formattedString)
 
+                        self?.getChatGPTResponse(for: result.bestTranscription.formattedString) { response in
+                            self?.speak(response)
+                        }
                     }
                    
                 }
@@ -326,10 +320,6 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
            view.addGestureRecognizer(doubleTapRecognizer)
         
         loadTextFromFile()
-        
-        
-        chatGPTStreamClient = ChatGPTStreamClient(textView: textView)
-
 
 
     }

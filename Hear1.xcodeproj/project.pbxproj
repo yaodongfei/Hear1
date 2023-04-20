@@ -7,15 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5758EDE36ED4D857AA2FEF8 /* libPods-Hear1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F9B0050D9EB2BF79D85658 /* libPods-Hear1.a */; };
+		DA0A3EE029F0CB710089CDAA /* ChatGPTStreamClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0A3EDF29F0CB710089CDAA /* ChatGPTStreamClient.swift */; };
+		DA1EACFE29EFC1B0005D8714 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EACFD29EFC1B0005D8714 /* ViewController.swift */; };
+		DA1EAD0029EFF832005D8714 /* 13.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DA1EACFF29EFF832005D8714 /* 13.mp3 */; };
 		DA31EA1829E177E700A4F3B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA31EA1729E177E700A4F3B9 /* AppDelegate.swift */; };
 		DA31EA1A29E177E700A4F3B9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA31EA1929E177E700A4F3B9 /* SceneDelegate.swift */; };
-		DA31EA1C29E177E700A4F3B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA31EA1B29E177E700A4F3B9 /* ViewController.swift */; };
+		DA31EA1C29E177E700A4F3B9 /* ViewController.bak in Sources */ = {isa = PBXBuildFile; fileRef = DA31EA1B29E177E700A4F3B9 /* ViewController.bak */; };
 		DA31EA1F29E177E700A4F3B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA31EA1D29E177E700A4F3B9 /* Main.storyboard */; };
 		DA31EA2129E177E900A4F3B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA31EA2029E177E900A4F3B9 /* Assets.xcassets */; };
 		DA31EA2429E177E900A4F3B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA31EA2229E177E900A4F3B9 /* LaunchScreen.storyboard */; };
 		DA31EA2F29E177E900A4F3B9 /* Hear1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA31EA2E29E177E900A4F3B9 /* Hear1Tests.swift */; };
 		DA31EA3929E177E900A4F3B9 /* Hear1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA31EA3829E177E900A4F3B9 /* Hear1UITests.swift */; };
 		DA31EA3B29E177E900A4F3B9 /* Hear1UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA31EA3A29E177E900A4F3B9 /* Hear1UITestsLaunchTests.swift */; };
+		DA31EA4829E1804500A4F3B9 /* SeeMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA31EA4729E1804500A4F3B9 /* SeeMe.swift */; };
+		DA31EA4A29E180DA00A4F3B9 /* SeeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA31EA4929E180DA00A4F3B9 /* SeeController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,10 +42,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		44F9B0050D9EB2BF79D85658 /* libPods-Hear1.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Hear1.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E2B81551EBC09D3D5F0F8FC /* Pods-Hear1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hear1.debug.xcconfig"; path = "Target Support Files/Pods-Hear1/Pods-Hear1.debug.xcconfig"; sourceTree = "<group>"; };
+		DA0A3EDF29F0CB710089CDAA /* ChatGPTStreamClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTStreamClient.swift; sourceTree = "<group>"; };
+		DA0A3EE129F0CFEC0089CDAA /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		DA0A3F0A29F0DDFF0089CDAA /* Headers */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Headers; path = Pods/Headers; sourceTree = "<group>"; };
+		DA1EACFD29EFC1B0005D8714 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DA1EACFF29EFF832005D8714 /* 13.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 13.mp3; path = "../../../Music/网易云音乐/13.mp3"; sourceTree = "<group>"; };
 		DA31EA1429E177E700A4F3B9 /* Hear1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hear1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA31EA1729E177E700A4F3B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA31EA1929E177E700A4F3B9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DA31EA1B29E177E700A4F3B9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DA31EA1B29E177E700A4F3B9 /* ViewController.bak */ = {isa = PBXFileReference; lastKnownFileType = text; path = ViewController.bak; sourceTree = "<group>"; };
 		DA31EA1E29E177E700A4F3B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DA31EA2029E177E900A4F3B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA31EA2329E177E900A4F3B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +62,10 @@
 		DA31EA3429E177E900A4F3B9 /* Hear1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Hear1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA31EA3829E177E900A4F3B9 /* Hear1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hear1UITests.swift; sourceTree = "<group>"; };
 		DA31EA3A29E177E900A4F3B9 /* Hear1UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hear1UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DA31EA4729E1804500A4F3B9 /* SeeMe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeMe.swift; sourceTree = "<group>"; };
+		DA31EA4929E180DA00A4F3B9 /* SeeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeController.swift; sourceTree = "<group>"; };
+		DAE7002A29F035920039643C /* StreamingTextParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingTextParser.swift; sourceTree = "<group>"; };
+		F3FC4190DF3C40EC615A9F87 /* Pods-Hear1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hear1.release.xcconfig"; path = "Target Support Files/Pods-Hear1/Pods-Hear1.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5758EDE36ED4D857AA2FEF8 /* libPods-Hear1.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,13 +94,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6EA1F287A14FE04D636695B1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44F9B0050D9EB2BF79D85658 /* libPods-Hear1.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		849D8F644438F2AA9E6E13AF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8E2B81551EBC09D3D5F0F8FC /* Pods-Hear1.debug.xcconfig */,
+				F3FC4190DF3C40EC615A9F87 /* Pods-Hear1.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		DA31EA0B29E177E700A4F3B9 = {
 			isa = PBXGroup;
 			children = (
+				DA0A3F0A29F0DDFF0089CDAA /* Headers */,
+				DA0A3EE129F0CFEC0089CDAA /* Podfile */,
 				DA31EA1629E177E700A4F3B9 /* Hear1 */,
 				DA31EA2D29E177E900A4F3B9 /* Hear1Tests */,
 				DA31EA3729E177E900A4F3B9 /* Hear1UITests */,
 				DA31EA1529E177E700A4F3B9 /* Products */,
+				849D8F644438F2AA9E6E13AF /* Pods */,
+				6EA1F287A14FE04D636695B1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,13 +138,19 @@
 		DA31EA1629E177E700A4F3B9 /* Hear1 */ = {
 			isa = PBXGroup;
 			children = (
+				DA1EACFF29EFF832005D8714 /* 13.mp3 */,
 				DA31EA1729E177E700A4F3B9 /* AppDelegate.swift */,
 				DA31EA1929E177E700A4F3B9 /* SceneDelegate.swift */,
-				DA31EA1B29E177E700A4F3B9 /* ViewController.swift */,
+				DA31EA1B29E177E700A4F3B9 /* ViewController.bak */,
 				DA31EA1D29E177E700A4F3B9 /* Main.storyboard */,
 				DA31EA2029E177E900A4F3B9 /* Assets.xcassets */,
 				DA31EA2229E177E900A4F3B9 /* LaunchScreen.storyboard */,
+				DA31EA4729E1804500A4F3B9 /* SeeMe.swift */,
 				DA31EA2529E177E900A4F3B9 /* Info.plist */,
+				DA31EA4929E180DA00A4F3B9 /* SeeController.swift */,
+				DA1EACFD29EFC1B0005D8714 /* ViewController.swift */,
+				DAE7002A29F035920039643C /* StreamingTextParser.swift */,
+				DA0A3EDF29F0CB710089CDAA /* ChatGPTStreamClient.swift */,
 			);
 			path = Hear1;
 			sourceTree = "<group>";
@@ -134,6 +179,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DA31EA3E29E177E900A4F3B9 /* Build configuration list for PBXNativeTarget "Hear1" */;
 			buildPhases = (
+				039E4F9E41D2FD96257EC15F /* [CP] Check Pods Manifest.lock */,
 				DA31EA1029E177E700A4F3B9 /* Sources */,
 				DA31EA1129E177E700A4F3B9 /* Frameworks */,
 				DA31EA1229E177E700A4F3B9 /* Resources */,
@@ -234,6 +280,7 @@
 				DA31EA2429E177E900A4F3B9 /* LaunchScreen.storyboard in Resources */,
 				DA31EA2129E177E900A4F3B9 /* Assets.xcassets in Resources */,
 				DA31EA1F29E177E700A4F3B9 /* Main.storyboard in Resources */,
+				DA1EAD0029EFF832005D8714 /* 13.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,12 +300,41 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		039E4F9E41D2FD96257EC15F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Hear1-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DA31EA1029E177E700A4F3B9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA31EA1C29E177E700A4F3B9 /* ViewController.swift in Sources */,
+				DA1EACFE29EFC1B0005D8714 /* ViewController.swift in Sources */,
+				DA31EA1C29E177E700A4F3B9 /* ViewController.bak in Sources */,
+				DA0A3EE029F0CB710089CDAA /* ChatGPTStreamClient.swift in Sources */,
+				DA31EA4A29E180DA00A4F3B9 /* SeeController.swift in Sources */,
+				DA31EA4829E1804500A4F3B9 /* SeeMe.swift in Sources */,
 				DA31EA1829E177E700A4F3B9 /* AppDelegate.swift in Sources */,
 				DA31EA1A29E177E700A4F3B9 /* SceneDelegate.swift in Sources */,
 			);
@@ -432,6 +508,7 @@
 		};
 		DA31EA3F29E177E900A4F3B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E2B81551EBC09D3D5F0F8FC /* Pods-Hear1.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -440,6 +517,7 @@
 				DEVELOPMENT_TEAM = L676QKV8JC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Hear1/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -450,6 +528,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				NEW_SETTING = "";
+				NSMicrophoneUsageDescription = "此应用程序需要访问您的麦克风以便进行语音识别。";
 				PRODUCT_BUNDLE_IDENTIFIER = yd.Hear1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -460,6 +540,7 @@
 		};
 		DA31EA4029E177E900A4F3B9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3FC4190DF3C40EC615A9F87 /* Pods-Hear1.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -468,6 +549,7 @@
 				DEVELOPMENT_TEAM = L676QKV8JC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Hear1/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -478,6 +560,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				NEW_SETTING = "";
+				NSMicrophoneUsageDescription = "此应用程序需要访问您的麦克风以便进行语音识别。";
 				PRODUCT_BUNDLE_IDENTIFIER = yd.Hear1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

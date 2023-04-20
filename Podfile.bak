@@ -1,0 +1,26 @@
+# Podfile
+
+# 设置代理
+http_proxy = 'http://localhost:7890'
+https_proxy = 'http://localhost:7890'
+
+# 指定平台和最低版本
+platform :ios, '16.4'
+
+# 指定项目名称
+target 'Hear1' do
+  use_frameworks!
+
+  # 添加所需的 pod 依赖
+  pod 'Alamofire'
+  pod 'SwiftyJSON'
+end
+
+# 设置代理
+ENV['http_proxy'] = http_proxy
+ENV['https_proxy'] = https_proxy
+
+# 配置 CocoaPods
+
+install! :cocoapods, :integrate_targets => false, :verbose => true, :source => 'https://cdn.cocoapods.org/'
+
