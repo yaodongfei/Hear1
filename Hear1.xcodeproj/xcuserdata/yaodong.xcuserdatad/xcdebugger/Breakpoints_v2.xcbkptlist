@@ -14,8 +14,8 @@
             filePath = "Hear1/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
             landmarkName = "startRecording(waitingTime:)"
             landmarkType = "7">
             <Locations>
@@ -55,70 +55,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B39905FC-C0A6-4E4B-8D80-74E1095376B2"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Hear1/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
-            landmarkName = "ViewController"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "B39905FC-C0A6-4E4B-8D80-74E1095376B2 - e84888ad2b2ec6f3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.SFSpeechRecognitionResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Hear1.ViewController.addNewWord(sender: __C.UIButton) -&gt; ()"
-                  moduleName = "Hear1"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yaodong/macapp/Hear1/Hear1/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "54"
-                  endingLineNumber = "54"
-                  offsetFromSymbolStart = "380">
-               </Location>
-               <Location
-                  uuid = "B39905FC-C0A6-4E4B-8D80-74E1095376B2 - e84888ad2b2ec6d0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.SFSpeechRecognitionResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Hear1.ViewController.addNewWord(sender: __C.UIButton) -&gt; ()"
-                  moduleName = "Hear1"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yaodong/macapp/Hear1/Hear1/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "53"
-                  endingLineNumber = "53"
-                  offsetFromSymbolStart = "140">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "BFAAC8C9-60A9-4649-9A44-5E287EA57BD1"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Hear1/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
-            landmarkName = "ViewController"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "F18C0E03-E016-4442-811F-980AFD669D44"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -126,170 +62,10 @@
             filePath = "Hear1/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "startRecording(waitingTime:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F2952926-410A-41E8-938B-E89E733E7142"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Hear1/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "startRecording(waitingTime:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "F2952926-410A-41E8-938B-E89E733E7142 - df4582603bb82a9b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in Hear1.ViewController.addNewWord(sender: __C.UIButton) -&gt; ()"
-                  moduleName = "Hear1"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yaodong/macapp/Hear1/Hear1/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "54"
-                  endingLineNumber = "54"
-                  offsetFromSymbolStart = "64">
-               </Location>
-               <Location
-                  uuid = "F2952926-410A-41E8-938B-E89E733E7142 - a59971093ef8ad86"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Hear1.ViewController.addNewWord(sender: __C.UIButton) -&gt; ()"
-                  moduleName = "Hear1"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yaodong/macapp/Hear1/Hear1/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "55"
-                  endingLineNumber = "55"
-                  offsetFromSymbolStart = "2984">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "81800F7E-BA2A-420F-ABDB-DBB106627FE7"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Hear1/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
-            landmarkName = "startRecording(waitingTime:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C4A2CBCB-E118-43CB-9785-3D1F643C15A6"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Hear1/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "startRecording(waitingTime:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "C4A2CBCB-E118-43CB-9785-3D1F643C15A6 - a59971093ef8adc8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Hear1.ViewController.addNewWord(sender: __C.UIButton) -&gt; ()"
-                  moduleName = "Hear1"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yaodong/macapp/Hear1/Hear1/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57"
-                  offsetFromSymbolStart = "3052">
-               </Location>
-               <Location
-                  uuid = "C4A2CBCB-E118-43CB-9785-3D1F643C15A6 - df4582603bb82c24"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in Hear1.ViewController.addNewWord(sender: __C.UIButton) -&gt; ()"
-                  moduleName = "Hear1"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yaodong/macapp/Hear1/Hear1/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "41"
-                  endingLineNumber = "41"
-                  offsetFromSymbolStart = "36">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A08318FF-09DF-45F0-8681-C91A3032CB7E"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Hear1/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
-            landmarkName = "startRecording(waitingTime:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "A08318FF-09DF-45F0-8681-C91A3032CB7E - a59971093ef8adc8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Hear1.ViewController.addNewWord(sender: __C.UIButton) -&gt; ()"
-                  moduleName = "Hear1"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yaodong/macapp/Hear1/Hear1/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57"
-                  offsetFromSymbolStart = "3052">
-               </Location>
-               <Location
-                  uuid = "A08318FF-09DF-45F0-8681-C91A3032CB7E - df4582603bb82c24"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in Hear1.ViewController.addNewWord(sender: __C.UIButton) -&gt; ()"
-                  moduleName = "Hear1"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yaodong/macapp/Hear1/Hear1/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "41"
-                  endingLineNumber = "41"
-                  offsetFromSymbolStart = "36">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -302,8 +78,8 @@
             filePath = "Hear1/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "225"
-            endingLineNumber = "225"
+            startingLineNumber = "200"
+            endingLineNumber = "200"
             landmarkName = "ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -318,24 +94,8 @@
             filePath = "Hear1/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "startRecording(waitingTime:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D3B65AF9-561D-4F19-AA81-86775F017C9C"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Hear1/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
             landmarkName = "startRecording(waitingTime:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -350,8 +110,8 @@
             filePath = "Hear1/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "197"
-            endingLineNumber = "197"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
             landmarkName = "getChatGPTResponse(for:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -366,8 +126,8 @@
             filePath = "Hear1/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "185"
-            endingLineNumber = "185"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
             landmarkName = "getChatGPTResponse(for:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -382,8 +142,8 @@
             filePath = "Hear1/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "188"
-            endingLineNumber = "188"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
             landmarkName = "getChatGPTResponse(for:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -398,8 +158,8 @@
             filePath = "Hear1/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
             landmarkName = "getChatGPTResponse(for:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -414,8 +174,8 @@
             filePath = "Hear1/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
             landmarkName = "getChatGPTResponse(for:completion:)"
             landmarkType = "7">
             <Locations>
@@ -480,22 +240,6 @@
                   offsetFromSymbolStart = "1140">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "86548EBA-58B1-4498-B763-DC4F2E17929E"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Hear1/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "304"
-            endingLineNumber = "304"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
