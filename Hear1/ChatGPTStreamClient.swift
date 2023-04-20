@@ -21,7 +21,7 @@ class ChatGPTStreamClient: NSObject  {
     }
 
 //    func createStreamTask(for text: String) {
-//        let url = "https://api.openai.com/v1/chat/completions"
+//        let url = "https://api.openai.com/v1/chat/completions" 
 //        let headers: HTTPHeaders = [
 //            "Authorization": "Bearer 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",
 //            "Content-Type": "application/json"
