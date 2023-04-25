@@ -27,7 +27,7 @@ class ChatGPTStreamClient: NSObject  {
         },
         .font: UIFont.systemFont(ofSize: 18, weight: .medium) // 字体大小为18，字体权重为中等
     ]
-
+    
     // 回答端样式
     let senderChatGPTStyle: [NSAttributedString.Key: Any] = [
         .foregroundColor: UIColor { traitCollection in
@@ -35,10 +35,13 @@ class ChatGPTStreamClient: NSObject  {
         },
         .font: UIFont.systemFont(ofSize: 16, weight: .regular) // 字体大小为16，字体权重为常规
     ]
-
     
+    // 添加 setNewTextView 方法
+        func setNewTextView(_ newTextView: UITextView) {
+            self.textView = newTextView
+        }
     
-    init(textView: UITextView) {
+    init(textView: UITextView?) {
         self.textView = textView
     }
     func createStreamTask(for text: String) {
@@ -87,9 +90,9 @@ class ChatGPTStreamClient: NSObject  {
         textView.text = updatedText
     }
     
-   
     
-   
+    
+    
     
 }
 
@@ -106,7 +109,7 @@ extension ChatGPTStreamClient: URLSessionDataDelegate {
                     if jsonString == "[DONE]" {
                         self?.appendMessageToTextView("\n")
                         self?.delegate?.chatGPTStreamClientDidReceiveDoneMessage(self!)
-
+                        
                     } else {
                         if let jsonData = jsonString.data(using: .utf8), !jsonString.isEmpty {
                             let json = try! JSON(data: jsonData)
@@ -115,7 +118,7 @@ extension ChatGPTStreamClient: URLSessionDataDelegate {
                                 print(content)
                                 self?.responseText += content
                                 self?.appendMessageToTextView(content)
-//                                self?.delegate?.speakWord(self!)
+                                //                                self?.delegate?.speakWord(self!)
                             }
                         }
                     }

@@ -1,20 +1,30 @@
 PODS:
   - Alamofire (5.6.4)
+  - InputBarAccessoryView (5.5.0):
+    - InputBarAccessoryView/Core (= 5.5.0)
+  - InputBarAccessoryView/Core (5.5.0)
+  - MessageKit (3.8.0):
+    - InputBarAccessoryView (~> 5.5.0)
   - SwiftyJSON (5.0.1)
 
 DEPENDENCIES:
   - Alamofire
+  - MessageKit
   - SwiftyJSON
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - InputBarAccessoryView
+    - MessageKit
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
+  InputBarAccessoryView: 1d7b0a672b36e370f01f264b3907ef39d03328e3
+  MessageKit: a1ba0c69ebead94029867853eb44dd05b9b3f453
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 18bbe6907545f75d7098fee7ada70681fd9e9b46
+PODFILE CHECKSUM: 3abae957cccd5a9559069730e5f7c44b9dbf4421
 
 COCOAPODS: 1.12.1
