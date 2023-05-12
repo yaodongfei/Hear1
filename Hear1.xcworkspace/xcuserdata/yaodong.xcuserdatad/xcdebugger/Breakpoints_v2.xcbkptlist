@@ -7,97 +7,33 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "77732FCB-AAD9-4268-A43A-60BC71427A27"
+            uuid = "455C492F-E1A8-40C4-8A64-AE452AC55827"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Hear1/ChatGPTStreamClient.swift"
+            filePath = "Hear1/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
-            landmarkName = "urlSession(_:dataTask:didReceive:)"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "startRecording(waitingTime:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B68710B8-6012-4887-9253-E25A0E2526ED"
+            uuid = "3E9468BD-E095-48DF-8837-E8A588976A0E"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Hear1/ChatGPTStreamClient.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "appendMessageToTextView2(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "B68710B8-6012-4887-9253-E25A0E2526ED - b79fef716baff99b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Hear1.ChatGPTStreamClient.appendMessageToTextView2(Swift.String) -&gt; ()"
-                  moduleName = "Hear1"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yaodong/macapp/Hear1/Hear1/ChatGPTStreamClient.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "75"
-                  endingLineNumber = "75"
-                  offsetFromSymbolStart = "100">
-               </Location>
-               <Location
-                  uuid = "B68710B8-6012-4887-9253-E25A0E2526ED - b79fef716baff99b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Hear1.ChatGPTStreamClient.appendMessageToTextView2(Swift.String) -&gt; ()"
-                  moduleName = "Hear1"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yaodong/macapp/Hear1/Hear1/ChatGPTStreamClient.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "75"
-                  endingLineNumber = "75"
-                  offsetFromSymbolStart = "92">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "71321365-A5E2-4F81-B99A-C2DE942CD72D"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Hear1/ChatGPTStreamClient.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
-            landmarkName = "appendMessageToTextView2(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B7D605E5-A745-4214-9C18-98885249442D"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Hear1/ChatGPTStreamClient.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
-            landmarkName = "appendMessageToTextView2(_:)"
-            landmarkType = "7">
+            startingLineNumber = "154"
+            endingLineNumber = "154"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
