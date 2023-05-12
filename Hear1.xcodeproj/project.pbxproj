@@ -14,7 +14,6 @@
 		DA31EA1829E177E700A4F3B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA31EA1729E177E700A4F3B9 /* AppDelegate.swift */; };
 		DA31EA1A29E177E700A4F3B9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA31EA1929E177E700A4F3B9 /* SceneDelegate.swift */; };
 		DA31EA1F29E177E700A4F3B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA31EA1D29E177E700A4F3B9 /* Main.storyboard */; };
-		DA31EA2129E177E900A4F3B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA31EA2029E177E900A4F3B9 /* Assets.xcassets */; };
 		DA31EA2429E177E900A4F3B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA31EA2229E177E900A4F3B9 /* LaunchScreen.storyboard */; };
 		DA31EA2F29E177E900A4F3B9 /* Hear1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA31EA2E29E177E900A4F3B9 /* Hear1Tests.swift */; };
 		DA31EA3929E177E900A4F3B9 /* Hear1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA31EA3829E177E900A4F3B9 /* Hear1UITests.swift */; };
@@ -277,7 +276,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA31EA2429E177E900A4F3B9 /* LaunchScreen.storyboard in Resources */,
-				DA31EA2129E177E900A4F3B9 /* Assets.xcassets in Resources */,
 				DA31EA1F29E177E700A4F3B9 /* Main.storyboard in Resources */,
 				DA1EAD0029EFF832005D8714 /* 13.mp3 in Resources */,
 			);
