@@ -18,6 +18,7 @@ extension ViewController: UITextViewDelegate {
 
 class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     
+    
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "zh_CN"))
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
@@ -25,9 +26,15 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     private let speechSynthesizer = AVSpeechSynthesizer()
     
     // 添加按钮和 UITextView 属性
-    private var createTextViewButton: UIButton!
+
     private var textView: UITextView!
     private var chatGPTStreamClient: ChatGPTStreamClient?
+    var isRecording = false
+    var canChange = false
+    private var createTextViewButton: UIButton!
+
+    private var startListeningButton = UIButton(type: .system)
+    private var startListeningButton2 = UIButton(type: .system)
     
 //    private var rtfManager: RTFManager!
 
@@ -56,21 +63,23 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
        
 
         // 初始化 textView
-//        textView.translatesAutoresizingMaskIntoConstraints = false
-//        textView.isEditable = false // 不允许修改内容
-//        textView.isSelectable = true // 允许选中和复制文本
-//        textView.delegate = self
-//
-//
-//        // 设置 UITextView 的样式
-//        textView.layer.cornerRadius = 10
-//        textView.layer.borderWidth = 1
-//        textView.layer.borderColor = UIColor.systemGray4.cgColor
-//        textView.backgroundColor = UIColor.systemGray6
-//        textView.textColor = UIColor.label
-//        textView.font = UIFont.systemFont(ofSize: 16)
-//        textView.textContainerInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        
+       textView = UITextView()
+
+       textView.translatesAutoresizingMaskIntoConstraints = false
+       textView.isEditable = false // 不允许修改内容
+       textView.isSelectable = true // 允许选中和复制文本
+       textView.delegate = self
+
+
+       // 设置 UITextView 的样式
+       textView.layer.cornerRadius = 10
+       textView.layer.borderWidth = 1
+       textView.layer.borderColor = UIColor.systemGray4.cgColor
+       textView.backgroundColor = UIColor.systemGray6
+       textView.textColor = UIColor.label
+       textView.font = UIFont.systemFont(ofSize: 16)
+       textView.textContainerInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+
         // 设置 startListeningButton 的样式
         // 初始化 startListeningButton
         startListeningButton.translatesAutoresizingMaskIntoConstraints = false
@@ -82,31 +91,40 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         startListeningButton.addTarget(self, action: #selector(startListeningButtonTapped), for: .touchUpInside)
         
         view.addSubview(startListeningButton)
-//        view.addSubview(textView)
+        view.addSubview(textView)
+
+        //设置startListeningButton2和startListeningButton的功能差不多，但是可以在用户说完话识别完成以后，修改其中的内容，并去触发chatgpt接口
+        startListeningButton2.translatesAutoresizingMaskIntoConstraints = false
+        startListeningButton2.setTitle("开始收听", for: .normal)
+        startListeningButton2.setTitleColor(.white, for: .normal)
+        startListeningButton2.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        startListeningButton2.layer.cornerRadius = 20
+        startListeningButton2.backgroundColor = UIColor(red: 0.2, green: 0.6, blue: 1, alpha: 1)
+        startListeningButton2.addTarget(self, action: #selector(startListeningButtonTapped), for: .touchUpInside)
+
         
         // 设置 textView 和 startListeningButton 的约束
         NSLayoutConstraint.activate([
-//            textView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-//            textView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-//            textView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-//            textView.bottomAnchor.constraint(equalTo: startListeningButton.topAnchor, constant: -10),
+            textView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            textView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            textView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            textView.bottomAnchor.constraint(equalTo: startListeningButton.topAnchor, constant: -10),
             
             startListeningButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
                 startListeningButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
                 startListeningButton.heightAnchor.constraint(equalToConstant: 50)
         ])
         
-        setupCreateTextViewButton()
+        //setupCreateTextViewButton()
         
         // 添加双击屏幕事件
         let doubleTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(startListeningButtonTapped))
         doubleTapRecognizer.numberOfTapsRequired = 2
         view.addGestureRecognizer(doubleTapRecognizer)
         
-//        loadTextFromFile()
+       loadTextFromFile()
         
         // 最后，在初始化 ChatGPTStreamClient 实例的地方设置其代理：
-        textView = UITextView()
         chatGPTStreamClient = ChatGPTStreamClient(textView: textView)
         chatGPTStreamClient?.delegate = self
         
@@ -124,7 +142,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
             createTextViewButton.layer.cornerRadius = 10
             
             createTextViewButton.addTarget(self, action: #selector(createNewTextView), for: .touchUpInside)
-            self.view.addSubview(createTextViewButton)
+             self.view.addSubview(createTextViewButton)
             
             // 设置按钮的自动布局约束
             createTextViewButton.translatesAutoresizingMaskIntoConstraints = false
@@ -274,8 +292,6 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         textView.attributedText = attributedText
     }
     
-    var isRecording = false
-    private var startListeningButton = UIButton(type: .system)
     
     
     
@@ -291,8 +307,14 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         }
     }
     
-    
+
+    /**
+        从指定文件中加载文本
+        */
+
+
     func loadTextFromFile() {
+
         let fileName = "conversation.rtf"
         let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(fileName)
         
@@ -305,6 +327,9 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
             print("加载文件出错: \(error)")
         }
     }
+
+
+
     
     
     
