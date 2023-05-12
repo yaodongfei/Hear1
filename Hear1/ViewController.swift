@@ -29,7 +29,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     private var textView: UITextView!
     private var chatGPTStreamClient: ChatGPTStreamClient?
     
-    private var rtfManager: RTFManager!
+//    private var rtfManager: RTFManager!
 
     // 发送端样式
     let senderIStyle: [NSAttributedString.Key: Any] = [
@@ -110,7 +110,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         chatGPTStreamClient = ChatGPTStreamClient(textView: textView)
         chatGPTStreamClient?.delegate = self
         
-        rtfManager = RTFManager(viewController: self)
+//        rtfManager = RTFManager(viewController: self)
 
     }
     
