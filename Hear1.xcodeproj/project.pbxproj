@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		A5758EDE36ED4D857AA2FEF8 /* libPods-Hear1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F9B0050D9EB2BF79D85658 /* libPods-Hear1.a */; };
+		DA04A8E52A0FF69C00213946 /* 13.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DA1EACFF29EFF832005D8714 /* 13.mp3 */; };
+		DA04A8E62A0FF9EF00213946 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA31EA2029E177E900A4F3B9 /* Assets.xcassets */; };
 		DA0A3EE029F0CB710089CDAA /* ChatGPTStreamClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0A3EDF29F0CB710089CDAA /* ChatGPTStreamClient.swift */; };
 		DA1EACFE29EFC1B0005D8714 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EACFD29EFC1B0005D8714 /* ViewController.swift */; };
-		DA1EAD0029EFF832005D8714 /* 13.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DA1EACFF29EFF832005D8714 /* 13.mp3 */; };
 		DA31EA1829E177E700A4F3B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA31EA1729E177E700A4F3B9 /* AppDelegate.swift */; };
 		DA31EA1A29E177E700A4F3B9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA31EA1929E177E700A4F3B9 /* SceneDelegate.swift */; };
 		DA31EA1F29E177E700A4F3B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA31EA1D29E177E700A4F3B9 /* Main.storyboard */; };
@@ -180,7 +181,6 @@
 				DA31EA1029E177E700A4F3B9 /* Sources */,
 				DA31EA1129E177E700A4F3B9 /* Frameworks */,
 				DA31EA1229E177E700A4F3B9 /* Resources */,
-				B034F4F6437DD595BE6D4BEC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -275,9 +275,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA04A8E62A0FF9EF00213946 /* Assets.xcassets in Resources */,
+				DA04A8E52A0FF69C00213946 /* 13.mp3 in Resources */,
 				DA31EA2429E177E900A4F3B9 /* LaunchScreen.storyboard in Resources */,
 				DA31EA1F29E177E700A4F3B9 /* Main.storyboard in Resources */,
-				DA1EAD0029EFF832005D8714 /* 13.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,23 +319,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B034F4F6437DD595BE6D4BEC /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Hear1/Pods-Hear1-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Hear1/Pods-Hear1-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Hear1/Pods-Hear1-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -524,12 +508,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = L676QKV8JC;
+				ENABLE_ON_DEMAND_RESOURCES = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Hear1/Info.plist;
-				INFOPLIST_KEY_LSApplicationCategoryType = Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "ChatGPT-AI";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -556,12 +544,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = L676QKV8JC;
+				ENABLE_ON_DEMAND_RESOURCES = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Hear1/Info.plist;
-				INFOPLIST_KEY_LSApplicationCategoryType = Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "ChatGPT-AI";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

@@ -113,7 +113,6 @@ extension ChatGPTStreamClient: URLSessionDataDelegate {
                     } else {
                         if let jsonData = jsonString.data(using: .utf8), !jsonString.isEmpty {
                             let json = try! JSON(data: jsonData)
-                            let id = json["id"].string
                             if let content = json["choices"][0]["delta"]["content"].string {
                                 print(content)
                                 self?.responseText += content
