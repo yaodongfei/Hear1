@@ -56,10 +56,11 @@ resource apiDefinition 'Microsoft.ApiManagement/service/apis@2021-01-01-preview'
 
 resource apisPolicy 'Microsoft.ApiManagement/service/apis/policies@2021-01-01-preview' = {
   parent: apiDefinition
+
   name: 'policy'
   properties: {
     format: 'rawxml'
-    value: file('/a/1.xml')
+    value: loadTextContent('/a/b/c.xml','utf-8')
   }
 }
 
@@ -658,7 +659,15 @@ resource updatePublishStatusUsingPOSTPolicy 'Microsoft.ApiManagement/service/api
   name: 'policy'
   properties: {
     format: 'rawxml'
-    value: file('/a/b/c.xml')
+    value: loadTextContent('/a/b/c.xml','utf-8')
+  }
+}
+resource addUsingGETPolicy 'Microsoft.ApiManagement/service/apis/operations/policies@2021-01-01-preview' = {
+  parent: addUsingGET
+  name: 'policy'
+  properties: {
+    format: 'rawxml'
+    value: loadTextContent('/a/b/c2.xml','utf-8')
   }
 }
 

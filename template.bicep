@@ -60,7 +60,7 @@ resource apisPolicy 'Microsoft.ApiManagement/service/apis/policies@2021-01-01-pr
   name: 'policy'
   properties: {
     format: 'rawxml'
-    value: file('{{.}}')
+    value: loadTextContent('{{filePath}}','{{encoding}}')
   }
 }
 {{/apiPolicies}}
@@ -91,7 +91,7 @@ resource {{pathOperationId}}Policy 'Microsoft.ApiManagement/service/apis/operati
   name: 'policy'
   properties: {
     format: 'rawxml'
-    value: file('{{filePath}}')
+    value: loadTextContent('{{filePath}}','{{encoding}}')
   }
 }
 {{/policy_mappings}}

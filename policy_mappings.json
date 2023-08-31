@@ -1,9 +1,17 @@
 {
-  "apisPolicyFilePath": "/a/1.xml",
+  "apisPolicy": {
+    "filePath": "/a/b/c.xml",
+    "encoding": "utf-8"
+  },
   "operationPolices": [
     {
       "pathOperationId": "updatePublishStatusUsingPOST",
-      "filePath": "/a/b/c.xml"
+      "filePath": "/a/b/c.xml",
+      "encoding": "utf-8"
+    },
+    {
+      "pathOperationId": "addUsingGET",
+      "filePath": "/a/b/c2.xml"
     }
   ]
 }
