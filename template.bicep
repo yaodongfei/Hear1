@@ -1,6 +1,3 @@
-@description('The name of the API Management service instance')
-param apiManagementServiceName string = '{{info.title}}'
-
 @description('The email address of the owner of the service')
 param publisherEmail string ='{{info.contact.eamil}}'
 
@@ -26,29 +23,54 @@ param skuCount int = 1
 @description('Location for all resources.')
 param location string = resourceGroup().location
 
-resource apiManagementService 'Microsoft.ApiManagement/service@2021-08-01' = {
-  name: apiManagementServiceName
-  location: location
-  sku: {
-    name: sku
-    capacity: skuCount
-  }
+param serviceName string
+var serviceName = if(environment == 'dev'){
+    'dev-apim'
+}else if(environment == 'uat'){
+    'ust-apim'
+}else if(environment == 'uat'){
+    'prd-apim'
+}else{
+    'dev-apim'
+}
+
+
+resource apiManagementService 'Microsoft.ApiManagement/service@2021-08-01' existing = {
+  name: serviceName
+}
+
+
+param swaggerContent object ={{swaggerContent}}
+
+resource apiDefinition 'Microsoft.ApiManagement/service/apis@2021-01-01-preview' = {
+  parent: apiManagementService
+  name: '{{detail.operationId}}'
   properties: {
-    publisherEmail: publisherEmail
-    publisherName: publisherName
+    path: '{{path}}'
+    protocols: ['https','http']
+    contentFormat: 'swagger-link-json'
+    contentValue: swaggerContent
   }
 }
 
 
-param serviceName string
-param swaggerContent object ={{swaggerContent}}
+{{#apiPolicies}}
+resource apisPolicy 'Microsoft.ApiManagement/service/apis/policies@2021-01-01-preview' = {
+  parent: apiDefinition
+  name: 'policy'
+  properties: {
+    format: 'rawxml'
+    value: file('{{.}}')
+  }
+}
+{{/apiPolicies}}
+
 
 
 
 {{#paths_2}}
-
-resource {{detail.operationId}} 'Microsoft.ApiManagement/service/apis@2021-01-01-preview' = {
-  parent: apiManagementServiceName
+resource {{detail.operationId}} 'Microsoft.ApiManagement/service/apis/operations@2021-01-01-preview' = {
+  parent: apiDefinition
   name: '{{detail.operationId}}'
   properties: {
     path: '{{path}}'
@@ -58,13 +80,13 @@ resource {{detail.operationId}} 'Microsoft.ApiManagement/service/apis@2021-01-01
 
   }
 }
-
 {{/paths_2}}
 
 
-{{#policy_mappings}}
 
-resource {{pathOperationId}}Policy 'Microsoft.ApiManagement/service/apis/policies@2021-01-01-preview' = {
+
+{{#policy_mappings}}
+resource {{pathOperationId}}Policy 'Microsoft.ApiManagement/service/apis/operations/policies@2021-01-01-preview' = {
   parent: {{pathOperationId}}
   name: 'policy'
   properties: {
@@ -73,3 +95,5 @@ resource {{pathOperationId}}Policy 'Microsoft.ApiManagement/service/apis/policie
   }
 }
 {{/policy_mappings}}
+
+

@@ -24,16 +24,25 @@ with open('OpenAPI.json', 'r') as f:
     policy_mappings = []
     with open('policy_mappings.json', 'r') as f2:
         policy_mappings2 = json.load(f2)
-        for policy_mapping in policy_mappings2:
+        # check if exist apis policy
+        if policy_mappings2['apisPolicyFilePath'] is not None and policy_mappings2['apisPolicyFilePath']:
+            data['apiPolicies'] = [policy_mappings2['apisPolicyFilePath']]
+        else:
+            data['apiPolicies'] = []
+
+        for policy_mapping in policy_mappings2['operationPolices']:
+            # check mapping values
             if (policy_mapping['filePath'] is not None and policy_mapping['filePath']
                     and policy_mapping['pathOperationId'] is not None and policy_mapping['pathOperationId']):
                 policy_mappings.append(policy_mapping)
+
     data['policy_mappings'] = policy_mappings
 
     # Reade the template.bicep in current directory
     template_bicep = ''
     with open('template.bicep', 'r') as f3:
         template_bicep = f3.read()
+
     # Render the template with the data from the swagger.json file
     rendered = chevron.render(template_bicep, data)
 

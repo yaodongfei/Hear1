@@ -1,6 +1,9 @@
-[
-  {
-    "filePath": "",
-    "pathOperationId": ""
-  }
-]
+{
+  "apisPolicyFilePath": "/a/1.xml",
+  "operationPolices": [
+    {
+      "pathOperationId": "updatePublishStatusUsingPOST",
+      "filePath": "/a/b/c.xml"
+    }
+  ]
+}
