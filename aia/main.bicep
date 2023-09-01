@@ -17,7 +17,77 @@ resource apiManagementService 'Microsoft.ApiManagement/service@2021-08-01' exist
 }
 
 
-param swaggerContent object ={'swagger': '2.0', 'servers': {'url': 'https//test.aiaazure.biz/test'}, 'info': {'description': '# Knife4j RESTful APIs', 'version': '1.0', 'termsOfService': 'https://doc.xiaominfo.com/', 'contact': {'name': 'yd'}}, 'host': 'localhost:9001', 'basePath': '/', 'tags': [], 'paths': {'/devlopview/log-publish-relation/updatePublishStatus': {'post': {'tags': ['关联发布'], 'summary': '关联发布状态修改', 'operationId': 'updatePublishStatusUsingPOST', 'description': '关联发布状态修改', 'consumes': ['application/json'], 'produces': ['*/*'], 'parameters': [{'in': 'body', 'name': 'command', 'description': 'command', 'required': True, 'schema': {'$ref': '#/definitions/LogUpdatePublishStatusSave'}}, {'name': 'token', 'in': 'header', 'description': '用户token信息', 'required': False, 'type': 'string'}], 'responses': {'200': {'description': 'OK'}, '201': {'description': 'Created'}, '401': {'description': 'Unauthorized'}, '403': {'description': 'Forbidden'}, '404': {'description': 'Not Found'}}}}}}
+param swaggerContent string ='{
+  &quot;swagger&quot;: &quot;2.0&quot;,
+  &quot;servers&quot;: {
+    &quot;url&quot;: &quot;https//test.aiaazure.biz/test&quot;
+  },
+  &quot;info&quot;: {
+    &quot;description&quot;: &quot;# Knife4j RESTful APIs&quot;,
+    &quot;version&quot;: &quot;1.0&quot;,
+    &quot;termsOfService&quot;: &quot;https://doc.xiaominfo.com/&quot;,
+    &quot;contact&quot;: {
+      &quot;name&quot;: &quot;yd&quot;
+    }
+  },
+  &quot;host&quot;: &quot;localhost:9001&quot;,
+  &quot;basePath&quot;: &quot;/&quot;,
+  &quot;tags&quot;: [
+  ],
+  &quot;paths&quot;: {
+    &quot;/devlopview/log-publish-relation/updatePublishStatus&quot;: {
+      &quot;post&quot;: {
+        &quot;tags&quot;: [
+          &quot;关联发布&quot;
+        ],
+        &quot;summary&quot;: &quot;关联发布状态修改&quot;,
+        &quot;operationId&quot;: &quot;updatePublishStatusUsingPOST&quot;,
+        &quot;description&quot;: &quot;关联发布状态修改&quot;,
+        &quot;consumes&quot;: [
+          &quot;application/json&quot;
+        ],
+        &quot;produces&quot;: [
+          &quot;*/*&quot;
+        ],
+        &quot;parameters&quot;: [
+          {
+            &quot;in&quot;: &quot;body&quot;,
+            &quot;name&quot;: &quot;command&quot;,
+            &quot;description&quot;: &quot;command&quot;,
+            &quot;required&quot;: true,
+            &quot;schema&quot;: {
+              &quot;$ref&quot;: &quot;#/definitions/LogUpdatePublishStatusSave&quot;
+            }
+          },
+          {
+            &quot;name&quot;: &quot;token&quot;,
+            &quot;in&quot;: &quot;header&quot;,
+            &quot;description&quot;: &quot;用户token信息&quot;,
+            &quot;required&quot;: false,
+            &quot;type&quot;: &quot;string&quot;
+          }
+        ],
+        &quot;responses&quot;: {
+          &quot;200&quot;: {
+            &quot;description&quot;: &quot;OK&quot;
+          },
+          &quot;201&quot;: {
+            &quot;description&quot;: &quot;Created&quot;
+          },
+          &quot;401&quot;: {
+            &quot;description&quot;: &quot;Unauthorized&quot;
+          },
+          &quot;403&quot;: {
+            &quot;description&quot;: &quot;Forbidden&quot;
+          },
+          &quot;404&quot;: {
+            &quot;description&quot;: &quot;Not Found&quot;
+          }
+        }
+      }
+    }
+  }
+}'
 
 resource apiDefinition 'Microsoft.ApiManagement/service/apis@2021-01-01-preview' = {
   parent: apiManagementService
