@@ -1,11 +1,11 @@
 {
   "apisPolicy": {
-    "filePath": ""
+    "filePath": "policy.xml"
   },
   "operationPolices": [
     {
       "pathOperationId": "updatePublishStatusUsingPOST",
-      "filePath": ""
+      "filePath": "policy.xml"
     }
   ]
 }

@@ -1,16 +1,15 @@
 import json
+import os
+import re
+import yaml
+
 import chevron
 
-swaggerContent = {}
-with open('OpenAPI.json', 'r') as f:
-    swaggerContent = json.load(f)
 
-# Read and parse the swagger.json file in the current directory
-with open('OpenAPI.json', 'r') as f:
-    data = json.load(f)
-    data['swaggerContent'] = swaggerContent
+# Parse the swagger file and generate the bicep file
+def handler_data(data):
+    global value
     data['contentFormat'] = 'swagger-link-json'
-
     paths_2 = []
     for key, value in data['paths'].items():
         tmp_path = {'path': key}
@@ -20,6 +19,27 @@ with open('OpenAPI.json', 'r') as f:
         paths_2.append(tmp_path)
     data['paths_2'] = paths_2
 
+    # use the last one server in servers
+    for server in data['servers']:
+        tmp_server = {}
+        url = server['url']
+        server_variables = server['variables']
+        for match in re.finditer(r'{(.*?)}', url):
+            placeholder = match.group(0)
+            key = match.group(1)
+            if key in server_variables:
+                url = url.replace(placeholder, server_variables[key]['default'])
+        tmp_server['url'] = url
+        parts = url.split("/", 3)
+
+        if len(parts) > 3:
+            result = "/".join(parts[3:])
+            tmp_server['basePath'] = result
+            tmp_server['url'] = parts[0] + "//" + parts[2] + "/"
+        else:
+            pass
+
+        data['server'] = tmp_server
     # read and parse policy_mappings.json file in current directory
     policy_mappings = []
     with open('policy_mappings.json', 'r') as f2:
@@ -40,17 +60,31 @@ with open('OpenAPI.json', 'r') as f:
                 if not (policy_mapping.get('encoding') is not None and policy_mapping['encoding']):
                     policy_mapping['encoding'] = 'utf-8'
                 policy_mappings.append(policy_mapping)
-
     data['policy_mappings'] = policy_mappings
-
     # Reade the template.bicep in current directory
     template_bicep = ''
     with open('template.bicep', 'r') as f3:
         template_bicep = f3.read()
-
     # Render the template with the data from the swagger.json file
     rendered = chevron.render(template_bicep, data)
-
     # Write the rendered template to a new file
     with open('main.bicep', 'w') as f4:
         f4.write(rendered)
+
+
+swagger_file_yaml = 'OpenAPI.yaml'
+swagger_file_yml = 'OpenAPI.yml'
+swagger_file_json = 'OpenAPI.json'
+
+if os.path.exists(swagger_file_yaml):
+    # Read and parse the swagger.json file in the current directory
+    with open(swagger_file_yaml, 'r') as yaml_file:
+        data = yaml.safe_load(yaml_file)
+elif os.path.exists(swagger_file_yml):
+    with open(swagger_file_yml, 'r') as yaml_file:
+        data = yaml.safe_load(yaml_file)
+elif os.path.exists(swagger_file_json):
+    # Read and parse the swagger.json file in the current directory
+    with open(swagger_file_json, 'r') as f:
+        data = json.load(f)
+        handler_data(data)

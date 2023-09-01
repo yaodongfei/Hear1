@@ -16,9 +16,6 @@ resource apiManagementService 'Microsoft.ApiManagement/service@2021-08-01' exist
   name: serviceName
 }
 
-
-param swaggerContent object ={{swaggerContent}}
-
 resource apiDefinition 'Microsoft.ApiManagement/service/apis@2021-01-01-preview' = {
   parent: apiManagementService
   name: 'apisName'
@@ -26,11 +23,16 @@ resource apiDefinition 'Microsoft.ApiManagement/service/apis@2021-01-01-preview'
     apiVersion: '{{info.version}}'
     description: '{{info.description}}'
     displayName: '{{info.title}}'
-    contact: {{info.contact}}
-    serverUrl: '{{servers.url}}',
+    contact: {
+        email:'{{info.contact.email}}'
+        name:'{{info.contact.name}}'
+        url:'{{info.contact.url}}'
+    }
+    serviceUrl: '{{server.url}}'
+    path: '{{server.basePath}}'
     protocols: ['https','http']
-    contentFormat: '{{contentFormat}}'
-    contentValue: swaggerContent
+    format: '{{contentFormat}}'
+    value: loadTextContent('{{filePath}}','{{encoding}}')
   }
 }
 
@@ -51,8 +53,8 @@ resource apisPolicy 'Microsoft.ApiManagement/service/apis/policies@2021-01-01-pr
 
 {{#paths_2}}
 resource {{detail.operationId}} 'Microsoft.ApiManagement/service/apis/operations@2021-01-01-preview' = {
-  parent: apiDefinition,
-  name: '{{detail.operationId}}',
+  parent: apiDefinition
+  name: '{{detail.operationId}}'
   properties: {
     description: '{{detail.description}}'
     displayName: '{{detail.summary}}'
