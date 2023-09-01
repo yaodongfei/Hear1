@@ -1,5 +1,4 @@
 import json
-import os
 import chevron
 
 swaggerContent = {}
@@ -10,6 +9,7 @@ with open('OpenAPI.json', 'r') as f:
 with open('OpenAPI.json', 'r') as f:
     data = json.load(f)
     data['swaggerContent'] = swaggerContent
+    data['contentFormat'] = 'swagger-link-json'
 
     paths_2 = []
     for key, value in data['paths'].items():
@@ -25,15 +25,20 @@ with open('OpenAPI.json', 'r') as f:
     with open('policy_mappings.json', 'r') as f2:
         policy_mappings2 = json.load(f2)
         # check if exist apis policy
-        if policy_mappings2['apisPolicyFilePath'] is not None and policy_mappings2['apisPolicyFilePath']:
-            data['apiPolicies'] = [policy_mappings2['apisPolicyFilePath']]
+        apis_policy = policy_mappings2.get('apisPolicy')
+        if apis_policy is not None and apis_policy.get('filePath') is not None and apis_policy['filePath']:
+            if not (apis_policy.get('encoding') is not None and apis_policy['encoding']):
+                apis_policy['encoding'] = 'utf-8'
+            data['apiPolicies'] = [apis_policy]
         else:
             data['apiPolicies'] = []
 
         for policy_mapping in policy_mappings2['operationPolices']:
             # check mapping values
-            if (policy_mapping['filePath'] is not None and policy_mapping['filePath']
-                    and policy_mapping['pathOperationId'] is not None and policy_mapping['pathOperationId']):
+            if (policy_mapping.get('filePath') is not None and policy_mapping['filePath']
+                    and policy_mapping.get('pathOperationId') is not None and policy_mapping['pathOperationId']):
+                if not (policy_mapping.get('encoding') is not None and policy_mapping['encoding']):
+                    policy_mapping['encoding'] = 'utf-8'
                 policy_mappings.append(policy_mapping)
 
     data['policy_mappings'] = policy_mappings
@@ -47,5 +52,5 @@ with open('OpenAPI.json', 'r') as f:
     rendered = chevron.render(template_bicep, data)
 
     # Write the rendered template to a new file
-    with open('main.bicep', 'w') as f:
-        f.write(rendered)
+    with open('main.bicep', 'w') as f4:
+        f4.write(rendered)
