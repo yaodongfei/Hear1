@@ -6,7 +6,16 @@
 └── template.bicep       A template engine similar to Mustache used in Python
 
 
-1.policy_mappings.json Configuration Details：
+1.install python 3.X
+2.install python package by blew command:
+pip install -r requirements.txt
+3.run command:
+python /Users/yaodong/gushi_ai/aia/test/bicep_generator.py /Users/yaodong/gushi_ai/aia
+ '/Users/yaodong/gushi_ai/aia/test/bicep_generator.py': the python file path
+'/Users/yaodong/gushi_ai/aia': the swagger file and policy mappings file's path
+
+
+3.policy_mappings.json Configuration Details：
 {
   "apisPolicy": {
     "filePath": The file path of apis' policy

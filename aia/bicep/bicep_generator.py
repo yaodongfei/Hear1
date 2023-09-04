@@ -2,14 +2,21 @@ import json
 import os
 import re
 import yaml
+import sys
 
 import chevron
+
+# Configuration python file path
+python_file_path = '/home/pipeline/bicep/'
+python_file_path = '/Users/yaodong/gushi_ai/aia/bicep/'
 
 
 # Parse the swagger file and generate the bicep file
 def handler_data(data):
-    global value
-    data['contentFormat'] = 'swagger-link-json'
+    path_prefix_tmp = sys.argv[1]
+    if not path_prefix_tmp.endswith('/'):
+        path_prefix_tmp += '/'
+    data['path_prefix'] = path_prefix_tmp
     paths_2 = []
     for key, value in data['paths'].items():
         tmp_path = {'path': key}
@@ -42,7 +49,7 @@ def handler_data(data):
         data['server'] = tmp_server
     # read and parse policy_mappings.json file in current directory
     policy_mappings = []
-    with open('policy_mappings.json', 'r') as f2:
+    with open(path_prefix_tmp + 'policy_mappings.json', 'r') as f2:
         policy_mappings2 = json.load(f2)
         # check if exist apis policy
         apis_policy = policy_mappings2.get('apisPolicy')
@@ -63,7 +70,7 @@ def handler_data(data):
     data['policy_mappings'] = policy_mappings
     # Reade the template.bicep in current directory
     template_bicep = ''
-    with open('template.bicep', 'r') as f3:
+    with open(python_file_path + 'template.bicep', 'r') as f3:
         template_bicep = f3.read()
     # Render the template with the data from the swagger.json file
     rendered = chevron.render(template_bicep, data)
@@ -75,16 +82,34 @@ def handler_data(data):
 swagger_file_yaml = 'OpenAPI.yaml'
 swagger_file_yml = 'OpenAPI.yml'
 swagger_file_json = 'OpenAPI.json'
+if len(sys.argv) <= 1:
+    print("Error: parameter isn't exists")
+    sys.exit(1)
 
-if os.path.exists(swagger_file_yaml):
+path_prefix = sys.argv[1] + "/"
+print(path_prefix)
+data = {}
+if os.path.exists(path_prefix + swagger_file_yaml):
     # Read and parse the swagger.json file in the current directory
-    with open(swagger_file_yaml, 'r') as yaml_file:
+    with open(path_prefix + swagger_file_yaml, 'r') as yaml_file:
         data = yaml.safe_load(yaml_file)
-elif os.path.exists(swagger_file_yml):
-    with open(swagger_file_yml, 'r') as yaml_file:
+        data['swaggerFile'] = swagger_file_yaml
+        data['swaggerFormat'] = 'swagger-json'
+elif os.path.exists(path_prefix + swagger_file_yml):
+    with open(path_prefix + swagger_file_yml, 'r') as yaml_file:
         data = yaml.safe_load(yaml_file)
-elif os.path.exists(swagger_file_json):
+        data['swaggerFile'] = swagger_file_yml
+        data['swaggerFormat'] = 'swagger-json'
+
+elif os.path.exists(path_prefix + swagger_file_json):
     # Read and parse the swagger.json file in the current directory
-    with open(swagger_file_json, 'r') as f:
+    with open(path_prefix + swagger_file_json, 'r') as f:
         data = json.load(f)
-        handler_data(data)
+        data['swaggerFile'] = swagger_file_json
+        data['swaggerFormat'] = 'swagger-json'
+else:
+    print("Error:can not find any swagger file")
+    sys.exit(1)
+# create bicep
+handler_data(data)
+print("generator main.bicep success")

@@ -1,6 +1,4 @@
 param environment string = 'dev'
-
-param serviceName string
 var serviceName = if(environment == 'dev'){
     'dev-apim'
 }else if(environment == 'uat'){
@@ -12,11 +10,11 @@ var serviceName = if(environment == 'dev'){
 }
 
 
-resource apiManagementService 'Microsoft.ApiManagement/service@2021-08-01' existing = {
+resource apiManagementService 'Microsoft.ApiManagement/service@2023-01-01-preview' existing = {
   name: serviceName
 }
 
-resource apiDefinition 'Microsoft.ApiManagement/service/apis@2021-01-01-preview' = {
+resource apiDefinition 'Microsoft.ApiManagement/service/apis@2023-01-01-preview' = {
   parent: apiManagementService
   name: 'apisName'
   properties: {
@@ -31,19 +29,19 @@ resource apiDefinition 'Microsoft.ApiManagement/service/apis@2021-01-01-preview'
     serviceUrl: '{{server.url}}'
     path: '{{server.basePath}}'
     protocols: ['https','http']
-    format: '{{contentFormat}}'
-    value: loadTextContent('{{filePath}}','{{encoding}}')
+    format: '{{swaggerFormat}}'
+    value: loadTextContent('{{path_prefix}}{{swaggerFile}}','utf-8')
   }
 }
 
 
 {{#apiPolicies}}
-resource apisPolicy 'Microsoft.ApiManagement/service/apis/policies@2021-01-01-preview' = {
+resource apisPolicy 'Microsoft.ApiManagement/service/apis/policies@2023-01-01-preview' = {
   parent: apiDefinition
   name: 'policy'
   properties: {
     format: 'xml'
-    value: loadTextContent('{{filePath}}','{{encoding}}')
+    value: loadTextContent('{{path_prefix}}{{filePath}}','{{encoding}}')
   }
 }
 {{/apiPolicies}}
@@ -52,7 +50,7 @@ resource apisPolicy 'Microsoft.ApiManagement/service/apis/policies@2021-01-01-pr
 
 
 {{#paths_2}}
-resource {{detail.operationId}} 'Microsoft.ApiManagement/service/apis/operations@2021-01-01-preview' = {
+resource {{detail.operationId}} 'Microsoft.ApiManagement/service/apis/operations@2023-01-01-preview' = {
   parent: apiDefinition
   name: '{{detail.operationId}}'
   properties: {
@@ -69,12 +67,12 @@ resource {{detail.operationId}} 'Microsoft.ApiManagement/service/apis/operations
 
 
 {{#policy_mappings}}
-resource {{pathOperationId}}Policy 'Microsoft.ApiManagement/service/apis/operations/policies@2021-01-01-preview' = {
+resource {{pathOperationId}}Policy 'Microsoft.ApiManagement/service/apis/operations/policies@2023-01-01-preview' = {
   parent: {{pathOperationId}}
   name: 'policy'
   properties: {
     format: 'xml'
-    value: loadTextContent('{{filePath}}','{{encoding}}')
+    value: loadTextContent('{{path_prefix}}{{filePath}}','{{encoding}}')
   }
 }
 {{/policy_mappings}}

@@ -1,6 +1,4 @@
 param environment string = 'dev'
-
-param serviceName string
 var serviceName = if(environment == 'dev'){
     'dev-apim'
 }else if(environment == 'uat'){
@@ -12,11 +10,11 @@ var serviceName = if(environment == 'dev'){
 }
 
 
-resource apiManagementService 'Microsoft.ApiManagement/service@2021-08-01' existing = {
+resource apiManagementService 'Microsoft.ApiManagement/service@2023-01-01-preview' existing = {
   name: serviceName
 }
 
-resource apiDefinition 'Microsoft.ApiManagement/service/apis@2021-01-01-preview' = {
+resource apiDefinition 'Microsoft.ApiManagement/service/apis@2023-01-01-preview' = {
   parent: apiManagementService
   name: 'apisName'
   properties: {
@@ -31,25 +29,25 @@ resource apiDefinition 'Microsoft.ApiManagement/service/apis@2021-01-01-preview'
     serviceUrl: 'https://demo.gigantic-server.com:8443/'
     path: 'v2'
     protocols: ['https','http']
-    format: 'swagger-link-json'
-    value: loadTextContent('','')
+    format: 'swagger-json'
+    value: loadTextContent('/Users/yaodong/gushi_ai/aia/OpenAPI.json','utf-8')
   }
 }
 
 
-resource apisPolicy 'Microsoft.ApiManagement/service/apis/policies@2021-01-01-preview' = {
+resource apisPolicy 'Microsoft.ApiManagement/service/apis/policies@2023-01-01-preview' = {
   parent: apiDefinition
   name: 'policy'
   properties: {
     format: 'xml'
-    value: loadTextContent('policy.xml','utf-8')
+    value: loadTextContent('/Users/yaodong/gushi_ai/aia/policy.xml','utf-8')
   }
 }
 
 
 
 
-resource updatePublishStatusUsingPOST 'Microsoft.ApiManagement/service/apis/operations@2021-01-01-preview' = {
+resource updatePublishStatusUsingPOST 'Microsoft.ApiManagement/service/apis/operations@2023-01-01-preview' = {
   parent: apiDefinition
   name: 'updatePublishStatusUsingPOST'
   properties: {
@@ -64,12 +62,12 @@ resource updatePublishStatusUsingPOST 'Microsoft.ApiManagement/service/apis/oper
 
 
 
-resource updatePublishStatusUsingPOSTPolicy 'Microsoft.ApiManagement/service/apis/operations/policies@2021-01-01-preview' = {
+resource updatePublishStatusUsingPOSTPolicy 'Microsoft.ApiManagement/service/apis/operations/policies@2023-01-01-preview' = {
   parent: updatePublishStatusUsingPOST
   name: 'policy'
   properties: {
     format: 'xml'
-    value: loadTextContent('policy.xml','utf-8')
+    value: loadTextContent('/Users/yaodong/gushi_ai/aia/policy.xml','utf-8')
   }
 }
 
